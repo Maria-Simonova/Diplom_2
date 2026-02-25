@@ -65,3 +65,4 @@ public class UserRegistrationTest {
                 .body("message", equalTo("Email, password and name are required fields"));
     }
 }
+
