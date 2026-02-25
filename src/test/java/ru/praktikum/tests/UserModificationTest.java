@@ -57,3 +57,4 @@ public class UserModificationTest {
                 .body("message", equalTo("You should be authorised"));
     }
 }
+
