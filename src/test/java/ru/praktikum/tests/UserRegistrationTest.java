@@ -13,7 +13,6 @@ import static org.hamcrest.Matchers.equalTo;
 public class UserRegistrationTest {
     private static UserService userService;
     private String userId;
-    private String accessToken;
 
     @BeforeClass
     public static void setup() {
@@ -26,8 +25,6 @@ public class UserRegistrationTest {
         UserData user = new UserData("frodo_" + System.currentTimeMillis() + "@shire.net", "MyPrecious1", "Frodo Baggins");
         Response response = userService.registerNewUser(user);
         userId = response.jsonPath().getString("user.id");
-        Response loginResponse = userService.authenticateUser(user);
-        accessToken = userService.formatToken(loginResponse);
     }
 
     @After
